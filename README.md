@@ -1,3 +1,11 @@
+# 速習Laravel改定2版速習シリーズ
+
+練習用リポジトリ
+
+https://www.amazon.co.jp/%E9%80%9F%E7%BF%92-Laravel-%E6%94%B9%E8%A8%822%E7%89%88-%E9%80%9F%E7%BF%92%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA-%E5%B1%B1%E7%94%B0%E7%A5%A5%E5%AF%9B-ebook/dp/B09YQ4W3WR/ref=sr_1_1?keywords=%E9%80%9F%E7%BF%92+laravel&qid=1686896780&sr=8-1
+
+## Laravel
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
