@@ -8,12 +8,18 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 </head>
 <body>
-  <p><img src="https://wings.msn.to/image/wings.jpg" alt="" title="ロゴ"></p>
+  <div class="container">
+    <p><img src="https://wings.msn.to/image/wings.jpg" alt="" title="ロゴ"></p>
+  </div>
   <hr>
-  @section('main')
-  <p>既定のコンテンツです</p>
-  @show
+  <div class="container">
+    @section('main')
+    <p>既定のコンテンツです</p>
+    @show
+  </div>
   <hr>
-  <p>Copyright(c) 1998-2022, WINGS Project. All Right Reserved.</p>
+  <div class="container">
+    <p>Copyright(c) 1998-2022, WINGS Project. All Right Reserved.</p>
+  </div>
 </body>
 </html>
