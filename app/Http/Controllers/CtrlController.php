@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class CtrlController extends Controller
 {
 
-    // ミドルウェアを定義
-    // only / except メソッドを使って、特定のアクションのみにすることができる
-
+    
     public function __construct() {
+        // ミドルウェアを定義
+        // only / except メソッドを使って、特定のアクションのみにすることができる
         $this->middleware(function($request, $next) {
             $logFile = storage_path('logs/access2.log');
             $logMessage = date('Y-m-d H:i:s')."\n";
@@ -18,6 +18,8 @@ class CtrlController extends Controller
             return $next($request);
         })->only(["upload", "form"]);
     }
+
+
 
 
     public function middle() {
@@ -44,18 +46,34 @@ class CtrlController extends Controller
     }
 
     public function result(Request $req) {
-        $name = $req->input('name', '名無し');
-        // $dt = $req->date('name', 'Y-m-d', 'Asia/Tokyo');
+        $name = $req->name;
 
-        return view('ctrl.form', ['result'=>'こんにちは、'.$name.'さん!']);
-        // $dt = $req->date('hoge', 'Y-m-d', 'Asia/Tokyo');
-        // $name = $req->input('hoge', '名無権兵衛');
-
-        // return view('ctrl.form', [
-        //     // 'result' => 'こんにちは、'.$name.'さん！'
-        //     'result' => $dt
-        // ]);
+        // [名前]欄が入力されているか、10文字以内か
+        if(empty($name) || mb_strlen($name) > 10) {
+            return redirect('ctrl/form')
+                ->withInput()
+                ->with('alert', '名前は必須、または、10文字以内で入力してください');
+        } else {
+            return view('ctrl.form', [
+                'result' => 'こんにちは、'.$name.'さん！'
+            ]);
+        }
     }
+
+    // public function result(Request $req) {
+    //     $name = $req->input('name', '名無し');
+    //     // $dt = $req->date('name', 'Y-m-d', 'Asia/Tokyo');
+
+    //     return view('ctrl.form', ['result'=>'こんにちは、'.$name.'さん!']);
+    //     // $dt = $req->date('hoge', 'Y-m-d', 'Asia/Tokyo');
+    //     // $name = $req->input('hoge', '名無権兵衛');
+
+    //     // return view('ctrl.form', [
+    //     //     // 'result' => 'こんにちは、'.$name.'さん！'
+    //     //     'result' => $dt
+    //     // ]);
+    // }
+
     public function form() {
         return view('ctrl.form', ['result'=>'']);
     }
