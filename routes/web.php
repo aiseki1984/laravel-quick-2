@@ -135,6 +135,9 @@ Route::group(['middleware'=>['debug']], function() {
 // リソースに対応するコントローラーの作成
 // php artisan make:controller ArticleController --resource --model=Article
 
+Route::get('state/view', 'StateController@recCookie');
+Route::get('state/readCookie', 'StateController@readCookie');
+
 // フォールバックルート
 // どのルートにもマッチしない場合、最終的に実行すべきルート（フォールバックルート）を定義できます
 // Route::fallback(function() {
