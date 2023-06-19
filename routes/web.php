@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\HelloController;
+use App\Http\Middleware\LogMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,8 @@ Route::get('/', function () {
 Route::controller(HelloController::class)->group(function() {
     Route::get('/hello', 'index');
     Route::get('/hello/view', 'view');
-    Route::get('/hello/list', 'list');
+    // Route::get('/hello/list', 'list');
+    Route::get('/hello/list', 'list')->name('list');
 });
 
 // Route::get('/hello', 'HelloController@view');
@@ -50,6 +52,24 @@ Route::get('/view/checked', 'ViewController@checked');
 Route::get('/view/master', 'ViewController@master');
 Route::get('/view/comp', 'ViewController@comp');
 
+Route::get('/ctrl/plain', 'CtrlController@plain');
+Route::get('/ctrl/header', 'CtrlController@header');
+Route::get('/ctrl/outJson', 'CtrlController@outJson');
+Route::get('/ctrl/outFile', 'CtrlController@outFile');
+Route::get('/ctrl/outCsv', 'CtrlController@outCsv');
+Route::get('/ctrl/outImage', 'CtrlController@outImage');
+Route::get('/ctrl/redirectBasic', 'CtrlController@redirectBasic');
+Route::get('/ctrl/index', 'CtrlController@index');
+Route::get('/ctrl/form', 'CtrlController@form');
+Route::post('/ctrl/result', 'CtrlController@result');
+Route::get('/ctrl/upload', 'CtrlController@upload');
+Route::post('/ctrl/uploadfile', 'CtrlController@uploadfile');
+
+// Route::get('/ctrl/middle', 'CtrlController@middle')->middleware(LogMiddleware::class);
+Route::group(['middleware'=>['debug']], function() {
+    Route::get('/ctrl/middle', 'CtrlController@middle');
+});
+
 // Example
 // Route::post('/route/post', 'RouteController@post');
 // Route::match(['get', 'post'], '/route/match', 'RouteController@match');
@@ -72,10 +92,10 @@ Route::get('/view/comp', 'ViewController@comp');
 // Route::get('route/search/{keywd?}', 'RouteController@search')->where('keywd', '.*');
 
 // ルート共通の接頭辞を付与する
-Route::prefix('/members')->group(function() {
-    Route::get('/info', 'RouteController@info');
-    Route::get('/article', 'RouteController@article');
-});
+// Route::prefix('/members')->group(function() {
+//     Route::get('/info', 'RouteController@info');
+//     Route::get('/article', 'RouteController@article');
+// });
 
 // 名前空間付きコントローラー
 // Route::namespace('Main')->group(function () {
@@ -102,15 +122,15 @@ Route::prefix('/members')->group(function() {
 // - GET `/articles/{article}/edit` `edit`
 // - PUT/PATCH `/articles/{article}` `update`
 // - DELETE `/articles/{article}` `destory`
-Route::resource('/articles', 'ArticleController');
+// Route::resource('/articles', 'ArticleController');
 // 特定のルート（action）を無効化するなら、exceptメソッドを利用する。
-Route::resource('/articles', 'ArticleController')->except(['edit', 'update']);
+// Route::resource('/articles', 'ArticleController')->except(['edit', 'update']);
 
 // resouces
-Route::resources([
-    '/articles' => 'ArticleContrller',
-    '/categories' => 'CategoriesContrller',
-]);
+// Route::resources([
+//     '/articles' => 'ArticleContrller',
+//     '/categories' => 'CategoriesContrller',
+// ]);
 
 // リソースに対応するコントローラーの作成
 // php artisan make:controller ArticleController --resource --model=Article
