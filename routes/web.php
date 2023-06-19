@@ -137,6 +137,8 @@ Route::group(['middleware'=>['debug']], function() {
 
 Route::get('state/view', 'StateController@recCookie');
 Route::get('state/readCookie', 'StateController@readCookie');
+Route::get('state/session1', 'StateController@session1');
+Route::get('state/session2', 'StateController@session2');
 
 // フォールバックルート
 // どのルートにもマッチしない場合、最終的に実行すべきルート（フォールバックルート）を定義できます

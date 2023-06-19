@@ -6,6 +6,21 @@ use Illuminate\Http\Request;
 
 class StateController extends Controller
 {
+    public function session1(Request $req) {
+
+        // session関数
+        // session(['series'=>'速習シリーズ']);
+        // $series = session('series', '未定');
+
+        $req->session()->put('series', '速習シリーズ');
+        return 'セッションを保存しました。';
+    }
+
+    public function session2(Request $req) {
+        $series = $req->session()->get('series', '未定');
+        return 'シリーズ: '.$series;
+    }
+
     public function readCookie(Request $req) {
         
         return response()
@@ -13,6 +28,7 @@ class StateController extends Controller
                 'app_title' => $req->cookie('app_title')
             ]);
     }
+
     public function recCookie() {
         // cookieの値（ここでは'laravel'という文字列）は暗号化される
         // jsと連携したいなどで、暗号化を無効化したい場合は /app/Http/Middlewareの
