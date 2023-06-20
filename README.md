@@ -34,6 +34,18 @@ $ docker run --rm \
     composer install --ignore-platform-reqs
 ```
 
+### typescript
+
+```shell
+$ npm install
+$ npm install -D react react-dom @types/react @types/react-dom
+$ npm install -D @vitejs/plugin-react
+$ npm install -D typescript
+$ npm add -D sass
+$ npx tsc --init --jsx react-jsx
+$ npm i -D react-router-dom @types/react-router-dom
+```
+
 ## Laravel
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>

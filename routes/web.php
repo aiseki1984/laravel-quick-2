@@ -15,9 +15,24 @@ use App\Http\Middleware\LogMiddleware;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/javascript', function () {
+    return view('javascript.index');
+});
+
+Route::get('/javascript/{any}', function () {
+    return view('javascript.index');
+})->where(['any' => '.*']);
+
+  
 
 // 同一コントローラーへのルート情報を束ねる
 Route::controller(HelloController::class)->group(function() {
