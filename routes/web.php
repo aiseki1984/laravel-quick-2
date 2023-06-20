@@ -140,6 +140,17 @@ Route::get('state/readCookie', 'StateController@readCookie');
 Route::get('state/session1', 'StateController@session1');
 Route::get('state/session2', 'StateController@session2');
 
+
+Route::get('record/find', 'RecordController@find');
+Route::get('record/where', 'RecordController@where');
+Route::get('record/orderby', 'RecordController@orderby');
+Route::get('record/select', 'RecordController@select');
+Route::get('record/groupby', 'RecordController@groupby');
+Route::get('record/scope', 'RecordController@scope');
+Route::get('record/query', 'RecordController@query');
+Route::get('record/dump', 'RecordController@dump');
+Route::get('record/hasmany', 'RecordController@hasmany');
+
 // フォールバックルート
 // どのルートにもマッチしない場合、最終的に実行すべきルート（フォールバックルート）を定義できます
 // Route::fallback(function() {
