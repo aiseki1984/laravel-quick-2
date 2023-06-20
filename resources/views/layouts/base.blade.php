@@ -10,6 +10,9 @@
 <body>
   <div class="container">
     <p><img src="https://wings.msn.to/image/wings.jpg" alt="" title="ロゴ"></p>
+    <ul>
+      <li><a href="/hello/list">LIST</a></li>
+    </ul>
   </div>
   <hr>
   <div class="container">
