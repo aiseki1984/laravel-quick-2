@@ -151,6 +151,13 @@ Route::get('record/query', 'RecordController@query');
 Route::get('record/dump', 'RecordController@dump');
 Route::get('record/hasmany', 'RecordController@hasmany');
 
+Route::post('/save', 'SaveController@store');
+Route::get('/save/create', 'SaveController@create');
+Route::get('/save/{id}/edit', 'SaveController@edit');
+Route::patch('/save/{id}', 'SaveController@update');
+Route::get('/save/{id}', 'SaveController@show');
+Route::delete('/save/{id}', 'SaveController@destory');
+
 // フォールバックルート
 // どのルートにもマッチしない場合、最終的に実行すべきルート（フォールバックルート）を定義できます
 // Route::fallback(function() {
