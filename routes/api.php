@@ -23,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/books', function () {
     return Book::all();
 });
+
+Route::post('/books', function (Request $request) {
+    return Book::create($request->all());
+});
