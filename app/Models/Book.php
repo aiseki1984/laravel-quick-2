@@ -21,4 +21,11 @@ class Book extends Model
     public function scopePiyopiyo($query, $name) {
         $query->where('publisher', $name);
     }
+
+    // reviews テーブルへの参照
+    public function reviews() {
+        // Eloquentでは、暗黙的に「参照先のモデル名_id」を外部キーとみなす。
+        // book_id列の値は、booksテーブルの主キー列(id)に対応していなければならない。
+        return $this->hasMany(Review::class);
+    }
 }

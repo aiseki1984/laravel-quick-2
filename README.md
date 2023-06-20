@@ -4,6 +4,10 @@
 
 https://www.amazon.co.jp/%E9%80%9F%E7%BF%92-Laravel-%E6%94%B9%E8%A8%822%E7%89%88-%E9%80%9F%E7%BF%92%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA-%E5%B1%B1%E7%94%B0%E7%A5%A5%E5%AF%9B-ebook/dp/B09YQ4W3WR/ref=sr_1_1?keywords=%E9%80%9F%E7%BF%92+laravel&qid=1686896780&sr=8-1
 
+リレーションについて
+
+https://migisanblog.com/laravel-eloquent-relation/
+
 ## Commands
 
 ### Installation

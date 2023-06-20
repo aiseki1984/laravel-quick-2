@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\DB;
 class RecordController extends Controller
 {
 
+    public function hasmany() {
+        return view('record.hasmany', [
+            'book'=> Book::find(1)
+        ]);
+    }
+
     public function dump() {
         // SQL命令の確認 (デバッグ)
         $result = Book::groupby('publisher')

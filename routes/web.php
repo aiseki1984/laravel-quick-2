@@ -149,6 +149,7 @@ Route::get('record/groupby', 'RecordController@groupby');
 Route::get('record/scope', 'RecordController@scope');
 Route::get('record/query', 'RecordController@query');
 Route::get('record/dump', 'RecordController@dump');
+Route::get('record/hasmany', 'RecordController@hasmany');
 
 // フォールバックルート
 // どのルートにもマッチしない場合、最終的に実行すべきルート（フォールバックルート）を定義できます
